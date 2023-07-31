@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block mycontent %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | General Form Elements</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  
+{% include 'sidebar.html' %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>User Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/index2">Home</a></li>
+              <li class="breadcrumb-item active"><a href="/usertable">View</a></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+      {% if messages %}
+              {% for msg in messages %}       
+                 <div class="alert alert-{{msg.level_tag}}" role="alert">
+                 {{msg.message}}
+                 </div>
+              {% endfor %}
+              {% endif %}
+    </section>
+ 
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"></h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="POST" action="/user_added"  id="myform" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="card-body">
+            
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">first_name</label>
+                    <input type="fname" class="form-control" name="fname" required placeholder="Enter surname">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">middle_name</label>
+                    <input type="mname" class="form-control"  name="mname" required placeholder="Enter Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">last_name</label>
+                    <input type="lname" class="form-control" name="lname" required placeholder="Enter Father's Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">date of birth</label>
+                    <input type="date" class="form-control" name="dob" required placeholder="dob" >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">gender</label>
+                    <input type="radio" class="form-control1" name="gender" value="Male"> Male
+                    <input type="radio" class="form-control1" name="gender" value="Female"> Female
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">user email_id</label>
+                    <input type="email" class="form-control" name="uemail" required placeholder="uemail">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">alt email_id</label>
+                    <input type="email" class="form-control" name="aemail" required placeholder="altemail">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">contact</label>
+                    <input type="tel" class="form-control" name="contact" required placeholder="contact" pattern="[0-9]{10}" maxlength="10">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">alt contact</label>
+                    <input type="tel" class="form-control" name="acontact" required placeholder="altcontact" pattern="[0-9]{10}" maxlength="10">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">parmenent address line 1</label>
+                    <input type="paddressline1" class="form-control"  name="paddressline1" required placeholder="paddressline1">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">parmenent address line 2</label>
+                    <input type="paddressline2" class="form-control"  name="paddressline2" required placeholder="paddressline2">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">parmenent landmark</label>
+                    <input type="plandmarkroad" class="form-control"  name="plandmarkroad" required placeholder="plandmarkroad">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">permenent pincode</label>
+                    <input type="p_pincode" class="form-control"  name="ppincode" required placeholder="p_pincode">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">permenent city</label>
+                    <select class="form-control"  name="pid">
+                      {% for i in mydata %}
+                       <option value="{{i.0}}">{{i.1}}</option>
+                      {% endfor %}
+                    </select>     
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">permenent state</label>
+                    <select class="form-control"  name="sid">
+                      {% for i in mydata2 %}
+                       <option value="{{i.0}}">{{i.1}}</option>
+                      {% endfor %}
+                    </select>     
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">permenent country</label>
+                    <select class="form-control"  name="pcid">
+                      {% for i in mydata3 %}
+                       <option value="{{i.0}}">{{i.1}}</option>
+                      {% endfor %}
+                    </select>     
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">confirm address line 1</label>
+                    <input type="caddressline1" class="form-control"  name="caddressline1" required placeholder="caddressline1">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">confirm address line 2</label>
+                    <input type="caddressline2" class="form-control"  name="caddressline2" required placeholder="caddressline2">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">confirm landmark</label>
+                    <input type="clandmarkroad" class="form-control"  name="clandmarkroad" required placeholder="clandmarkroad">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">confirm pincode</label>
+                    <input type="c_pincode" class="form-control"  name="cpincode" required placeholder="c_pincode">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">confirm city</label>
+                    <select class="form-control"  name="cid">
+                      {% for i in mydata %}
+                       <option value="{{i.0}}">{{i.1}}</option>
+                      {% endfor %}
+                    </select> 
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">confirm state</label>
+                    <select class="form-control"  name="csid">
+                      {% for i in mydata2 %}
+                       <option value="{{i.0}}">{{i.1}}</option>
+                      {% endfor %}
+                    </select> 
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">confirm country</label>
+                    <select class="form-control"  name="ccid">
+                      {% for i in mydata3 %}
+                       <option value="{{i.0}}">{{i.1}}</option>
+                      {% endfor %}
+                    </select> 
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">password</label>
+                    <input type="password" class="form-control"  name="password" required placeholder="password" minlength="8">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">user type</label>
+                    <select class="form-control"  name="usertype">
+                        <option c>Student</option>
+                        <option c>Faculty</option>
+                    </select> 
+                  </div>
+                  
+                <!-- /.card-body -->
+               
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-primary">reset</button>
+                </div>
+              </form>
+            </div>
+           
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- bs-custom-file-input -->
+<script src="{% static 'plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dist/js/demo.js' %}"></script>
+<!-- Page specific script -->
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
+<script src="{% static 'mytools/jquery.validate.min.js' %}"></script>
+<style>
+  .error{
+    color:red;
+  }
+</style>
+<script>
+  $().ready(function() {
+		// validate the comment form when it is submitted
+		$("#myform").validate();
+  });
+
+</script>
+{% endblock %}
+</body>
+</html>

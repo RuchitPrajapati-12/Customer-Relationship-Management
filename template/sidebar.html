@@ -1,0 +1,430 @@
+{% load static %}
+  <!-- Main Sidebar Container --> 
+  <aside class="main-sidebar sidebar-dark-primary elevation-1" style="background-color:black;">
+
+
+
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex"  style="background-color:black;">
+      <div class="image">
+        <img src="{% static 'dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">LJIGNOU(Admin)</a>
+      </div>
+    </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Sidebar Menu -->
+       <nav class="mt-2"  style="background-color:black;">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Admin Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+              <!--<li class="nav-item">
+                <a href="/index2" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v2</p>
+                </a>
+              </li>-->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                  Forms
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <!--<li class="nav-item">
+                  <a href="/general" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>General Elements</p>
+                  </a>
+                </li>-->
+                <li class="nav-item">
+                  <a href="/country" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Country</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/state" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>State</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/city" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>City</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/program" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Program</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/user" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>User</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studentform" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Student</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/semester" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Semester</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/facultyform" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Faculty</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/coursecategory" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Coursecategory</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/coursetype" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Coursetype</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/course" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Course</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/assignment" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Assignment</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/image" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Image</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/exam" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Exam</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/sms" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Sms</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/voice" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Voice</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/crmcomponent" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Crmcomponent</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/whatsappsms" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Whatsapp Sms</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/chatbotquery" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Chatbot Query</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/chatbotanswer" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Chatbot Answer</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studentprogram_t" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>StudentProgram_t</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studentassignment_t" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>StudentAssignment_t</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/notification_t" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Notification_t</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/coursesemester_t" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>CourseSemester_t</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studentexam_t" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>StudentExam_t</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/courseexam_t" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>CourseExam_t</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/sms_t" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Sms_t</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Tables
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+               <!--
+                <li class="nav-item">
+                  <a href="/data" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>DataTables</p>
+                  </a>
+                </li>-->
+                <li class="nav-item">
+                  <a href="/countrytable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Countrytable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/statetable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Statetable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/citytable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Citytable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/programtable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Programtable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/semestertable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Semestertable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/usertable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Usertable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studenttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Studenttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/facultytable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Facultytable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/coursecategorytable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Coursecategorytable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/coursetypetable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Coursetypetable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/coursetable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Coursetable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/assignmenttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Assignmenttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/imagetable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Imagetable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/examtable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Examtable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/smstable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Smstable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/voicetable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Voicetable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/crmcomponenttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Crmcomponenttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/whatsappsmstable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Whatsappsmstable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/chatbotquerytable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Chatbotquerytable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/chatbotanswertable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Chatbotanswertable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studentprogram_ttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Studentprogram_ttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studentassignment_ttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Studentassignment_ttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/notification_ttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Notification_ttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/coursesemester_ttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Coursesemester_ttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/studentexam_ttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Studentexam_ttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/courseexam_ttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Courseexam_ttable</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/sms_ttable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Sms_ttable</p>
+                  </a>
+                </li>
+              
+            
+            
+            
+              </ul>
+          </li>
+
+          <li class="nav-header">Account</li>
+          <li class="nav-item">
+            <a href="/changepassword" class="nav-link">
+              <i class="nav-icon fas fa-ellipsis-h"></i>
+              <p>Change Password</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    <!-- /.sidebar -->
+  </aside>

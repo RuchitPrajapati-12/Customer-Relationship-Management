@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block mycontent %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | General Form Elements</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+   
+{% include 'sidebar.html' %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Student Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/index2">Home</a></li>
+              <li class="breadcrumb-item active"><a href="/studenttable">View</a></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"></h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="POST" action="/student_added"  id="myform" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">user_id</label>
+                    <select class="form-control" name="uid">
+                      {% for i in mydata %}
+                        <option value="{{i.0}}">{{i.2}}</option>
+                      {% endfor %}
+                    </select> 
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">enrollmentno</label>
+                    <input type="enrollmentno" class="form-control" name="no" required placeholder="enrollmentno">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">enrollmentdate</label>
+                    <input type="date" class="form-control" name="date" required placeholder="enrollmentdate">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">admission_year</label>
+                    <input type="admission_year" class="form-control" name="year" required placeholder="admission_year">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">admissionvalidupto</label>
+                    <input type="admissionvalidupto" class="form-control" name="validupto" required placeholder="admissionvalidupto">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">regionalcenter</label>
+                    <input type="regionalcenter" class="form-control" name="regional" required placeholder="regionalcenter">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">student studycenter</label>
+                    <input type="student_studycenter" class="form-control" name="studeycenter" required placeholder="student_studycenter">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">medium</label>
+                    <input type="medium" class="form-control" name="medium" id="exampleInputPassword1" required placeholder="medium">
+                  </div>
+                  
+                <!-- /.card-body -->
+               
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-primary">reset</button>
+                </div>
+              </form>
+            </div>
+           
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- bs-custom-file-input -->
+<script src="{% static 'plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dist/js/demo.js' %}"></script>
+<!-- Page specific script -->
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
+<script src="{% static 'mytools/jquery.validate.min.js' %}"></script>
+<style>
+  .error{
+    color:red;
+  }
+</style>
+<script>
+  $().ready(function() {
+		// validate the comment form when it is submitted
+		$("#myform").validate();
+  });
+
+</script>
+{% endblock %}
+</body>
+</html>
